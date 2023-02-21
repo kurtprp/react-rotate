@@ -1,0 +1,21 @@
+diff --git a/node_modules/@react-native-community/slider/typings/index.d.ts b/node_modules/@react-native-community/slider/typings/index.d.ts
+index b213e36..a61a086 100644
+--- a/node_modules/@react-native-community/slider/typings/index.d.ts
++++ b/node_modules/@react-native-community/slider/typings/index.d.ts
+@@ -1,6 +1,8 @@
+ import * as React from "react";
+ import * as ReactNative from "react-native";
+ 
++type Constructor<T> = new (...args: any[]) => T;
++
+ type SliderReferenceType = (
+   React.MutableRefObject<SliderRef> &
+   React.LegacyRef<Slider>
+@@ -161,6 +163,6 @@ export interface SliderProps extends SliderPropsIOS, SliderPropsAndroid, SliderP
+ * A component used to select a single value from a range of values.
+ */
+ declare class SliderComponent extends React.Component<SliderProps> {}
+-declare const SliderBase: ReactNative.Constructor<ReactNative.NativeMethodsMixin> & typeof SliderComponent;
++declare const SliderBase: Constructor<ReactNative.NativeMethods> & typeof SliderComponent;
+ export default class Slider extends SliderBase {}
+ export type SliderIOS = Slider;
